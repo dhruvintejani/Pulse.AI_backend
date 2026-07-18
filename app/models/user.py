@@ -1,12 +1,11 @@
-from beanie import Indexed
 from pydantic import EmailStr, Field
 from pymongo import IndexModel
 from app.models.base import SearchableMixin, TimestampedDocument
 
 
 class User(SearchableMixin, TimestampedDocument):
-    clerk_user_id: Indexed(str, unique=True)
-    email: Indexed(EmailStr)
+    clerk_user_id: str
+    email: EmailStr
     name: str
     image_url: str | None = None
     role: str = "member"
