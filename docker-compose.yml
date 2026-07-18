@@ -1,0 +1,22 @@
+services:
+  api:
+    build: .
+    container_name: pulse-ai-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:7
+    container_name: pulse-ai-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - pulse_ai_mongo:/data/db
+
+volumes:
+  pulse_ai_mongo:
