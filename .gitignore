@@ -1,25 +1,28 @@
-# Dependencies
-node_modules/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage/
+htmlcov/
 
-# Build output
-dist/
-build/
-.next/
-out/
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables
+.env
+.env.*
+!.env.example
 
 # Logs
 logs/
 *.log
-npm-debug.log*
-yarn-debug.log*
-pnpm-debug.log*
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
 # OS files
 .DS_Store
@@ -29,13 +32,5 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Cache
-.cache/
-.parcel-cache/
-.eslintcache
-
-# Coverage
-coverage/
-
-# Misc
-*.tsbuildinfo
+# Docker and local data
+mongo-data/
